@@ -1,0 +1,154 @@
+<!doctype html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=0">
+	<meta name="viewport" content="width=drvice-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;"> -->
+	<meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1">
+	<title>一只小橘子</title> 
+
+	<link rel="icon" type="image/png" href="../qgj_qt/images/favicon.png"> 
+ 
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/app.css"> 
+	<!-- jquery -->
+	<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script><script src="js/swiper.min.js"></script>
+
+</head>
+
+<body>  
+<!-- 搜索框 -->
+<div class="search_bomb_box">
+	<div class="search_top fix">
+		<a class="search_bomb_box_a"><img src="images/back_jt.png"></a>
+		<div>
+			<form>
+				<input type="text" name="" placeholder="新品上市">
+				<button type="submit"><img src="images/sous.png"></button>
+			</form>
+		</div>
+	</div>
+	<div class="search_txt">
+		<h2>热门搜索</h2>
+		<ul>
+			<li><a href="list.html">进口水果</a></li>
+			<li><a href="list.html">榴莲</a></li>
+			<li><a href="list.html">车厘子</a></li>
+			<li><a href="list.html">草莓/a></li>
+			<li><a href="list.html">蓝莓</a></li>
+			<li><a href="list.html">沙糖桔</a></li>
+			<li><a href="list.html">水果捞</a></li> 
+		</ul> 
+	</div>
+</div> 
+<div style="height: .75rem;"></div>
+<!-- 外框 -->
+<div id="waik"> 
+<!-- 头部 -->
+<div class="indix_top">  
+	<div class="sos_t">
+		<input type="text" id="input1"  placeholder="新品上市"/> 
+	</div>  
+</div> 
+<!-- 内容 -->
+<div class="con"> 
+	<aside>
+	  <div class="menu-left scrollbar-none" id="sidebar">
+		<ul>
+		  <li  class="active">农产品无污染</li>
+		  <li >进口/有机水果</li>
+		  <li >水果捞</li>    
+		</ul>
+	  </div>
+	</aside>
+	<section class="menu-right padding-all j-content">
+	  <!-- <h5>今日推荐</h5> -->
+	  <div class="class_banner"><a href="#"><img src="images/sucai.jpg"></a></div>
+	  <ul>
+		<li class="w-3"> <img src="images/s1.jpg" /><span>空心菜</span></a></li>
+		<li class="w-3"> <img src="images/s3.jpg" /><span>西红柿</span></a></li>
+		<li class="w-3"> <img src="images/s5.jpg" /><span>茄子</span></a></li>
+	  </ul>
+	</section>
+	<section class="menu-right padding-all j-content">
+	  <!-- <h5>今日推荐</h5> -->
+	  <div class="class_banner"><a href="#"><img src="images/shuiguo-banner.jpg"></a></div>
+	  <ul>
+		<li class="w-3"> <img src="images/sg1.jpg" /><span>车厘子</span></a></li>
+		<li class="w-3"> <img src="images/sg2.jpg" /><span>蓝莓</span></a></li>
+		<li class="w-3"> <img src="images/sg3.jpg" /><span>草莓</span></a></li>
+		<li class="w-3"> <img src="images/sg4.jpg" /><span>榴莲</span></a></li>
+	  </ul>
+	</section> 
+	<section class="menu-right padding-all j-content">
+	  <!-- <h5>今日推荐</h5> -->
+	  <div class="class_banner"><a href="#"><img src="images/shuiguolao-banner.jpg"></a></div>
+	  <ul>
+		<li class="w-3"> <img src="images/sgl1.jpg" /><span>谷物水果捞</span></a></li>
+	  </ul>
+	</section> 
+
+
+<script type="text/javascript">
+	$(function($){
+		$('#sidebar ul li').click(function(){
+			$(this).addClass('active').siblings('li').removeClass('active');
+			var index = $(this).index();
+			$('.j-content').eq(index).show().siblings('.j-content').hide();
+		})
+	})
+</script>
+
+<!-- 底部导航 -->
+<div class="foot_menu">
+	<!-- <div class="bei"></div>  -->
+	<ul>
+		<li>
+			<a href="index.html">
+				<i><img src="images/footer_.png"></i>
+				<span>首页</span>
+			</a>
+		</li>
+		<li class="no">
+			<a href="mall_class.html">
+				<i><img src="images/footer1_.png"></i>
+				<span>分类</span>
+			</a>
+		</li> 
+		<li>
+			<a href="my.html">
+				<i><img src="images/footer4.png"></i>
+				<span>我的</span>
+			</a> 
+		</li>
+	</ul> 
+</div>
+<!-- 外框结束div -->
+</div> 
+
+</body>
+</html>
+
+
+<script>
+// 搜索显示隐藏
+$(function(){
+	$("#input1").mousedown(
+		function(){
+			$(".search_bomb_box").show()
+			$("#waik").hide()	 
+		}
+	)
+	$(".search_bomb_box .search_top>a").mousedown(
+		function(){
+			$(".search_bomb_box").hide()
+			$("#waik").show()	 
+		}
+	)
+}) 
+
+</script>
+ 

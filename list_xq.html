@@ -1,0 +1,179 @@
+<!doctype html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=0">
+	<meta name="viewport" content="width=drvice-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;"> -->
+	<meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1">
+	<title>一只小橘子</title> 
+
+	<link rel="icon" type="image/png" href="../qgj_qt/images/favicon.png"> 
+ 
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/app.css"> 
+	<!-- jquery -->
+    <!-- <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>-->
+	<script src="js/jquery.min.js"></script>  
+    
+	<!-- <script src="js/swiper.min.js"></script>  -->
+</head> 
+<body> 
+<!-- 搜索 -->  
+<div style="height: .75rem;"></div>
+<!-- 头部 -->
+<div class="ziye_toub">
+    <div class="left" onclick="history.back();"></div>
+    <p>商品详情</p>
+</div> 
+<!-- 内容 -->    
+<script src="js/swiper.min3.js"></script>
+<!-- 外框 --> 
+<div class="r85_tj_waik">
+    <div class="r85_tj_right">
+        <div class="list3_toux">
+            <div class="img"><img src="images/IMG_20200705_154608.jpg" alt=""></div>
+        </div>
+        <div class="sxk">
+            <a href="#">关注</a>
+            <!-- <a href="#">联系</a> -->
+        </div>
+    </div>
+    <div class="r85_tj_left">
+<!--  --> 
+        <div class="list3_toux">
+            <!-- <div class="img"><img src="images/toux2.jpg" alt=""></div> -->
+            <div class="text">
+                <h2>一只小橘子</h2>
+                <div class="tis_fuwu">
+                    <ul>
+                        <li class="no">在线支付</li>
+                        <li>售后</li> 
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="list3_neir">
+            <dl>
+                <dd style="width: 100%;font-weight: bold;">勤劳、专业、高效，安全的原则</dd> 
+            </dl>
+            <div class="text1 loader">
+                <!-- <h2>勤劳、专业、高效，安全的原则</h2> -->
+                <p class="none_yc">夏日炎炎 有我超甜</p>
+                <!-- <a href="javascript:;" class="click_dq" adds="no">展开</a> -->
+                <!-- <a>全部+</a> -->
+                <!-- <input type="button" value="展开+"> -->
+            </div>
+    
+  
+            <div class="shijian_js">
+                 <div class="qian">正在热卖</div>
+                 <div class="right">
+                      <p>距离结束：<span>02</span>天<span>22</span>时<span>28</span>分<span>02</span>秒</p>
+                 </div>
+            </div>
+            <div class="zhes_yige_wedd_anniu">
+                <a href="#">提交订单</a>
+            </div>
+        </div>  
+<!--  -->
+    </div>
+</div>
+    </script>
+
+
+<div class="big_img">
+    <div class="swiper-container2">
+    <div class="swiper-wrapper">
+    
+    </div>
+    </div>
+    <div class="swiper-pagination2"></div>
+</div> 
+<script>
+$(document).ready(function(){
+/*调起大图 S*/
+var mySwiper = new Swiper('.swiper-container2', {
+        loop: false,
+        pagination: '.swiper-pagination2',
+        })
+    $("#listsd").on("click", ".post img", 
+    function() {
+        var imgBox = $(this).parents(".post").find("img");
+        var i = $(imgBox).index(this);
+        $(".big_img .swiper-wrapper").html("")
+
+        for(var j = 0 ,c = imgBox.length; j < c ;j++){
+        $(".big_img .swiper-wrapper").append('<div class="swiper-slide"><div class="cell"><img src="' + imgBox.eq(j).attr("src") + '" / ></div></div>');
+        }
+        mySwiper.updateSlidesSize();
+        mySwiper.updatePagination();
+        $(".big_img").css({
+            "z-index": 1001,
+            "opacity": "1"
+        });
+        mySwiper.slideTo(i, 0, false);
+        return false;
+    });
+
+    $(".big_img").on("click", 
+    function() {
+        $(this).css({
+            "z-index": "-1",
+            "opacity": "0"
+        });
+
+    });
+});
+/*调起大图 E*/
+</script> 
+<!-- 图片弹出结束 --> 
+<script> 
+    /*弹出视频播放层*/
+    $(function(){
+        $(".play_video").click(function(){
+            // $("#fullpage div:first-of-type").addClass("masked");/*点击添加遮罩层CSS*/
+            $(".video").show();
+            $(".video video").get(0).play();//视频打开自动播放
+        });
+        $(document).bind("click",function(e){
+            var target  = $(e.target);
+            if(target.closest(".play_video,.video").length == 0){/*.closest()沿 DOM 树向上遍历，直到找到已应用选择器的一个匹配为止，返回包含零个或一个元素的 jQuery 对象。*/
+                $(".video").hide();
+                // $("#fullpage div:first-of-type").removeClass("masked");/*点击其他区域隐藏遮罩层CSS*/
+            };
+            e.stopPropagation();
+        })
+        //关闭video
+        $("#fullpage").click(function(){
+            $(".video").hide();
+            // $(".video video").get(0).play();
+            $(".video video").get(0).pause();//关闭窗口停止播放
+
+        }) 
+    });
+    // 内容显示隐藏 
+</script>
+<!-- 文字展开隐藏 -->
+<script> 
+$(function(){
+    $(".loader .click_dq").click(function(){
+        var addnow=$(this).attr("adds");
+        if(addnow=="no"){
+            $(this).prev().removeClass("none_yc",10000);
+            $(this).text("收起");
+            $(this).attr("adds","yes");
+        }else{
+            $(this).prev().addClass("none_yc",10000);
+            $(this).text("展开");
+            $(this).attr("adds","no");
+        } 
+    })
+})
+</script>  
+</body>
+</html>   
+
+ 
